@@ -1,0 +1,19 @@
+---
+- name: Lookups of aprs.fi 
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Return data from 2021-01-01 to 2021-01-04
+      aprs_fi:
+        name: jan_data
+        apikey: 57048.KoURGniaEeEUAV
+        callsign: KC9ZMY-1
+        what: loc
+      register: result
+
+    - name: Debug output 
+      debug:
+        var: result
+
