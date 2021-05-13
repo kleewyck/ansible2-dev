@@ -17,3 +17,14 @@
       debug:
         var: result
 
+    - name: Display  with debug
+      debug:
+        var: 
+          result.aprsjson.entries[0].altitude,
+          result.aprsjson.entries[0].comment
+
+    - name: Display with Debug Message
+      debug:
+        msg: "APRS information Site Altitude {{ result.aprsjson.entries[0].altitude }} has comment  {{ result.aprsjson.entries[0].comment }}"
+
+
